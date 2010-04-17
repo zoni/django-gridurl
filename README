@@ -1,0 +1,33 @@
+Django-gridurl: A Second Life http-in temporary URL to persistant URL mapper
+   http://zoni.nl/django-gridurl
+   http://github.com/zoni/django-gridurl/
+
+
+Dependencies: 
+
+ - Django 1.0+ (http://www.djangoproject.com/)
+ - Any webserver that can run django
+ - Python 2.6+ (http://python.org/)
+
+
+Sources:
+
+You can get the latest sources from git over at GitHub. Just do:
+
+$ git clone git://github.com/zoni/django-gridurl.git
+
+
+Installing:
+
+1. Check out latest sources to a directory outside your server's document root
+2. Create a settings_local.py in the root directory and change the default
+   settings as desired (See settings_local.py.example)
+3. Deploy django.wsgi (See http://docs.djangoproject.com/en/1.1/howto/deployment/)
+
+Please see INSTALL for detailed installation instructions
+
+
+Documentation:
+
+Isn't available yet. I'm working on it :)
+
