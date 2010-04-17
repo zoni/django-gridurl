@@ -6,7 +6,7 @@ import settings
 
 def index(request):
 	# Simply redirect to project homepage until a proper index page is written
-	return HttpResponseRedirect("http://zoni.nl/django-gridurl/")
+	return HttpResponseRedirect("http://zoni.nl/django-gridurl")
 
 def register(request, name):
 	# Register can only be used with POST request method
