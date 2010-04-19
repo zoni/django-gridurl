@@ -100,7 +100,7 @@ def register(request):
 		response['status'] = 403
 		response.write("{0} is already registered".format(name))
 	# Allow only a-z, A-Z ,0-9, _ and - characters in name
-	else if: re.search(r'[^\w-]+', name) != None
+	elif re.search(r'[^\w-]+', name) != None:
 		response['status'] = 403
 		response.write("{0} contains illegal characters. [Only a-zA-Z0-9-_] allowed".format(name))
 	else:
@@ -110,7 +110,7 @@ def register(request):
 		# Compute the hash of the salt+password
 		hash = hashlib.sha256(salt + password).hexdigest()
 
-		r = Url(name=name, password_salt=salt, password_hash=hash, url=url)
+		r = Url(name=name, password_salt=salt, password_hash=hash, inworld_url=url)
 		r.save()
 		
 		response.write("OK;{0};{1}".format(name,password))
