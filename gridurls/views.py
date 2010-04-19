@@ -61,7 +61,7 @@ def get(request, name):
 		return response
 
 	if r.inworld_url == "":
-		return HttpResponse("{0} is currently disabled".format(name), mimetype='text/plain', status=503)
+		return HttpResponse("'{0}' is currently disabled".format(name), mimetype='text/plain', status=503)
 	else:
 		response.write(r.inworld_url)
 		return response
@@ -73,7 +73,7 @@ def go(request, name):
 		return HttpResponse("Requested name not found", mimetype='text/plain', status=404)
 
 	if r.inworld_url == "":
-		return HttpResponse("{0} is currently disabled".format(name), mimetype='text/plain', status=503)
+		return HttpResponse("'{0}' is currently disabled".format(name), mimetype='text/plain', status=503)
 	else:
 		return HttpResponseRedirect(r.inworld_url)
 
@@ -102,7 +102,7 @@ def register(request):
 	# Allow only a-z, A-Z ,0-9, _ and - characters in name
 	elif re.search(r'[^\w-]+', name) != None:
 		response['status'] = 403
-		response.write("{0} contains illegal characters. [Only a-zA-Z0-9-_] allowed".format(name))
+		response.write("'{0}' contains illegal characters. Only [a-zA-Z0-9-_] allowed".format(name))
 	else:
 		# Generate random password salt consisting of salt_length (Configured in settings.py)
 		# characters in the range A-Z,a-z,0-9
