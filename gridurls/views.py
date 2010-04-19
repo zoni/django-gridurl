@@ -93,7 +93,7 @@ def register(request):
 	# And for the url, blank if not passed along in the request
 	if request.method == "POST" and 'url' in request.POST.keys():
 		url = request.POST['url']
-	else
+	else:
 		url = ""
 
 	if Url.objects.filter(name=name).count() > 0:
