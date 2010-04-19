@@ -2,8 +2,8 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('gridurls.views',
     (r'^$', 'index'),
-    (r'^generate', 'generate'),
-    (r'^register/([\w-]*)', 'register'),
+    (r'^register$', 'register'),
+    (r'^update/([\w-]*)', 'update'),
     (r'^get/([\w-]*)', 'get'),
     (r'^go/([\w-]*)', 'go'),
     # The next one basically duplicates the /go/<name> so /<name> directly works too
